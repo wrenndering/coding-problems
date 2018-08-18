@@ -18,7 +18,8 @@ function pushAndPop(brackets, isOpenFunc) {
         if (isOpenFunc(brackets[i])[0]) {
             stack.push(isOpenFunc(brackets[i])[1]);
         } else if (!isMatch(stack[stack.length - 1] + isOpenFunc(brackets[i])[1])) {
-            stack.push(isOpenFunc(brackets[i])[1]);
+            // stack.push(isOpenFunc(brackets[i])[1]);
+            return "NO";
         } else {
             stack.pop();
         }
@@ -41,3 +42,4 @@ function areBalanced(mapBracketsFunc, arrayOfBrackets, isOpenFunc) {
 }
 
 console.log(areBalanced(mapBrackets, ["[]", "()", "{}", "()()", "[[]]", "{{}}", "(())", "{()}", "[(])", "]["], isOpen));
+// console.log(areBalanced(mapBrackets, ["[(])()()()()()()()()()()()()()()()()()()()()()()()()()"], isOpen));
